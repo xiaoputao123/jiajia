@@ -1,0 +1,23 @@
+def check_phone_memory(total_memory, used_memory):
+    # 计算剩余内存
+    free_memory = total_memory - used_memory
+    # 检查是否低内存
+    if free_memory < 500:
+        status = "低内存！请删除不必要的文件或使用云存储。"
+    elif free_memory < 1000:
+        status = "内存较低，请考虑清理。"
+    else:
+        status = "内存充足。"
+
+    # 打印内存状态
+    print(f"总内存: {total_memory}GB")
+    print(f"已用内存: {used_memory}GB")
+    print(f"剩余内存: {free_memory}GB")
+    print(f"内存状态: {status}")
+
+# 测试数据
+total_memory = float(input("请输入手机的总内存（单位：GB）: "))
+used_memory = float(input("请输入手机已使用的内存（单位：GB）: "))
+
+# 调用函数，并传入用户输入的总内存和已用内存
+check_phone_memory(total_memory, used_memory)
